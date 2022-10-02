@@ -1,0 +1,59 @@
+.btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(92, 92, 92);
+  text-align: center;
+  color: rgb(218, 218, 218);
+  padding: 10px 0;
+}
+
+.btn-equal {
+  background-color: rgb(241, 140, 81);
+}
+
+.btn-add,
+.btn-sub,
+.btn-mult,
+.btn-divide {
+  background-color: bisque;
+  color: rgb(92, 92, 92);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(53, 53, 49);
+}
+
+.main {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  padding: 30px;
+  border: 1px solid rgb(116, 115, 115);
+  width: 250px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.container .display {
+  border: 1px solid rgb(107, 158, 30);
+  padding: 10px;
+}
+.container .squishy-grid {
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 20px;
+}/*# sourceMappingURL=main.css.map */
