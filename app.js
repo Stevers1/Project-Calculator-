@@ -13,6 +13,7 @@ const sub = document.querySelector('.btn-sub');
 const mult = document.querySelector('.btn-mult');
 const divide = document.querySelector('.btn-divide');
 const equal = document.querySelector('.btn-equal');
+const reset = document.querySelector('#reset');
 
 numbers.forEach((element, index) => {
   element.addEventListener('click', () => {
@@ -140,5 +141,17 @@ mult.addEventListener('click', () => {
     operate(opSelector,selector);
     addCount=1;
   }
+
+});
+
+reset.addEventListener('click', () => {
+
+  selector= [];
+  opSelector= "";
+  displayNumber.innerText = 0
+  nothing ="";
+  addCount = 0;
+  boolResult = false; //Check to display a new number by btns if it was from a result
+  checkForEqual = false;  // check if Equal btn was used
 
 })
