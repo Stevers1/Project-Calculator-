@@ -5,10 +5,9 @@ let displayNumber = document.querySelector('.display');
 let nothing ="";
 let addCount = 0;
 let boolResult = false; //Check to display a new number by btns if it was from a result
-let checkForEqual = false;
+let checkForEqual = false;  // check if Equal btn was used
 
 const numbers = document.querySelectorAll('.btn');
-
 const add = document.querySelector('.btn-add');
 const sub = document.querySelector('.btn-sub');
 const mult = document.querySelector('.btn-mult');
@@ -41,13 +40,52 @@ function operate(operator,arr){
     };
 
     displayNumber.innerText=result;
-    if(checkForEqual !==true){
-      opSelector = operator
-      console.log('Se uso el Igual')
-    }else {opSelector = ""}
     
-
+    console.log(selector);
+    if(checkForEqual !==true){ //might lead to some bugs idk
+      opSelector = operator
+    }else {
+      console.log('Se uso el Igual')
+      opSelector = ""
+    }
   }
+
+  if(operator == "Sub"){
+    console.log(selector[1]);
+
+    result = selector[0]-selector[1]
+
+
+    displayNumber.innerText=result;
+    
+    console.log(selector);
+    if(checkForEqual !==true){ //might lead to some bugs idk
+      opSelector = operator
+    }else {
+      console.log('Se uso el Igual')
+      opSelector = ""
+    }
+  }
+
+  if(operator == "Mult"){
+    console.log(selector[1]);
+
+    result = selector[0]*selector[1]
+
+
+    displayNumber.innerText=result;
+    
+    console.log(selector);
+    if(checkForEqual !==true){ //might lead to some bugs idk
+      opSelector = operator
+    }else {
+      console.log('Se uso el Igual')
+      opSelector = ""
+    }
+  }
+  selector.shift()
+  selector.shift()
+  selector.push(result);
   boolResult = true;
 }
 
@@ -78,4 +116,29 @@ equal.addEventListener('click', () => {
   checkForEqual=false
 })
 
-console.log(numbers);
+sub.addEventListener('click', () =>{
+
+  selector.push(Number(displayNumber.innerText));
+  displayNumber.innerText = 0;
+  opSelector="Sub";
+  addCount++;
+  
+  if(addCount == 2) {
+    operate(opSelector,selector);
+    addCount=1;
+  }
+})
+
+mult.addEventListener('click', () => {
+
+  selector.push(Number(displayNumber.innerText));
+  displayNumber.innerText = 0;
+  opSelector="Mult";
+  addCount++;
+  
+  if(addCount == 2) {
+    operate(opSelector,selector);
+    addCount=1;
+  }
+
+})
